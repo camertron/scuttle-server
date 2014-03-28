@@ -4,6 +4,7 @@ $(document).ready(function() {
   editor.setTheme("ace/theme/ambiance");
   editor.setShowPrintMargin(false);
   editor.renderer.setScrollMargin(7, 7, 7, 0);
+  editor.session.setUseWrapMode(true);
   editor.setFontSize(14);
 
   if (editor.getValue() == "") {
