@@ -27,4 +27,15 @@ $(document).ready(function() {
   });
 
   update();
+
+  var beautify_sql = function(text) {
+    var regex = /(SELECT|FROM|WHERE|GROUP BY|ORDER BY|RIGHT JOIN|LEFT JOIN|INNER JOIN|OUTER JOIN|JOIN)/g
+    return text.replace(/\n/g, "").replace(regex, function(match) {
+      return "\n" + match;
+    }).substring(1);
+  };
+
+  $(".btn-beautify").click(function() {
+    editor.setValue(beautify_sql(editor.getValue()));
+  });
 });
