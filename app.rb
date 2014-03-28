@@ -2,8 +2,6 @@ require 'sinatra'
 require 'scuttle'
 require 'json'
 
-require 'pry-nav'
-
 get '/' do
   erb :index
 end
