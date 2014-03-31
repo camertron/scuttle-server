@@ -14,4 +14,28 @@
 </div>
 
 <div class="arel">
-</div
+</div>
+
+<div class="row info">
+  <div class="col-lg-6">
+    <h4>Join Tables</h4>
+    <p>Scuttle doesn't know anything about your Rails models, so it can't correctly identify join tables (i.e. tables that have no corresponding Ruby class). You'll need to replace these by hand. Usually this can be resolved by creating an <code>Arel::Table</code> object and referencing its columns. For example, create a table: <code>pc = Arel::Table.new("posts_comments")</code>, then use it like so: <code>pc[:post_id]</code>.</p>
+
+    <h4>Qualified Columns</h4>
+    <p>Scuttle doesn't always know which table a referenced column belongs to. This isn't usually a problem, except when that column is the left-hand side of an expression. If you see something like <code>where(:id.eq(1))</code> in the conversion result, chances are you didn't fully qualify the column with a table. Try <code>WHERE post.id = 1</code> instead of <code>WHERE id = 1</code>.</p>
+
+    <h4>Why Does Scuttle Exist?</h4>
+    <p>I'll be giving a talk at <a href="http://railsconf.com/program#sessions">RailsConf</a> this year about constructing advanced queries with Arel. This project is a direct result of working on the talk. Plus it's fun :)</p>
+  </div>
+
+  <div class="col-lg-6">
+    <h4>Double Quotes</h4>
+    <p>The SQL parser Scuttle uses does not allow double quotes around column or table names, and it even prefers literal strings to be wrapped in single quotes. This could pose a problem if you're trying to convert a PostgresSQL query, since all column and table names use double quotes.</p>
+
+    <h4>Why Can't Scuttle Interpret my Query?</h4>
+    <p>It's pretty difficult to anticipate every kind of query, but Scuttle should be able to handle nearly all of the queries you might find in a Rails log. Currently, Scuttle only supports SELECT queries, but more types are coming soon. If you'd like to request a feature or submit a bug report, let me know on <a href="https://github.com/camertron/scuttle-rb">Github</a>.</p>
+
+    <h4>Why is the Project Called Scuttle?</h4>
+    <p>Initially I wanted to call it "Ariel" (i.e. from The Little Mermaid), but that's too linguistically similar to "Arel". Instead I chose to name it after the seagull in that movie, one of Ariel's best friends.</p>
+  </div>
+</div>

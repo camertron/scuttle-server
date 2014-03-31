@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  var timeout_handle = null;
   var editor = ace.edit($(".editor").get(0));
   editor.getSession().setMode("ace/mode/sql");
   editor.setTheme("ace/theme/ambiance");
@@ -22,8 +23,16 @@ $(document).ready(function() {
     })
   };
 
+  var update_with_delay = function() {
+    if (timeout_handle != null) {
+      window.clearTimeout(timeout_handle);
+    }
+
+    timeout_handle = window.setTimeout(update, 2000);
+  };
+
   editor.addEventListener("change", function() {
-    update();
+    update_with_delay();
   });
 
   update();
