@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "bower": "1.3.x"
+  },
+  "scripts": {
+    "postinstall": "bundle exec rake bower:install"
+  }
+}

@@ -24,6 +24,7 @@ GEM
     rack (1.5.2)
     rack-protection (1.5.3)
       rack
+    rake (10.1.0)
     sinatra (1.4.5)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -40,5 +41,6 @@ DEPENDENCIES
   json_pure
   pry-nav
   puma
+  rake
   scuttle!
   sinatra

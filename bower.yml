@@ -1,0 +1,17 @@
+lz-string:
+  libs/lz-string-{d}.{d}.{d}-min.js: js/
+jquery:
+  dist/jquery.min.js: js/
+  dist/jquery.min.map: js/
+bootstrap:
+  dist/js/bootstrap.min.js: js/
+  dist/css/bootstrap.min.css: css/
+  dist/css/bootstrap-theme.min.css: css/
+  dist/fonts/glyphicons-halflings-regular.eot: fonts/
+  dist/fonts/glyphicons-halflings-regular.svg: fonts/
+  dist/fonts/glyphicons-halflings-regular.ttf: fonts/
+  dist/fonts/glyphicons-halflings-regular.woff: fonts/
+ace-builds:
+  src-min/ace.js: js/
+  src-min/mode-sql.js: js/
+  src-min/theme-ambiance.js: js/
