@@ -7,4 +7,4 @@ if Sinatra::Base.production?
   Rake::Task['bower:install'].invoke
 end
 
-run Sinatra::Application
+run ScuttleServer::App

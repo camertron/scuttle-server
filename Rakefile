@@ -1,6 +1,11 @@
+# encoding: UTF-8
+
 require 'yaml'
 require 'fileutils'
 require 'pathname'
+
+require 'sinatra/activerecord'
+require 'sinatra/activerecord/rake'
 
 namespace :bower do
   task :install do
