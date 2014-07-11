@@ -48,10 +48,14 @@ body {
 }
 
 .container .jumbotron {
-  text-align: center;
   border-bottom: 1px solid #e5e5e5;
   padding: 20px;
   margin-bottom: 0;
+}
+
+.container .jumbotron p {
+  font-weight: normal;
+  font-size: 14px;
 }
 
 /* Responsive: Portrait tablets and up */
@@ -97,4 +101,72 @@ body {
 
 .info {
   margin-bottom: 15px;
+}
+
+.elbow-room {
+  margin-right: 10px;
+}
+
+.hat {
+  margin-top: 10px;
+}
+
+.top-hat {
+  margin-top: 20px;
+}
+
+.cushion {
+  margin-bottom: 10px;
+}
+
+.cushion-large {
+  margin-bottom: 20px;
+}
+
+.login-widget {
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #666;
+}
+
+.login-widget:hover {
+  background: #EEE;
+}
+
+.login-widget .glyphicon-chevron-down {
+  margin-top: 15px;
+}
+
+.association-element {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.association-element hr {
+  border-top-color: #d5d5d5;
+}
+
+.btn-clear-all {
+  cursor: pointer;
+}
+
+.btn-remove {
+  cursor: pointer;
+}
+
+.import-spinner {
+  display: none;
+}
+
+.error-message {
+  display: none;
+}
+
+.error-message i {
+  color: #DEC109;
+}
+
+.error-message span {
+  color: #666;
 }
