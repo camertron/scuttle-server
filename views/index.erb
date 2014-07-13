@@ -34,7 +34,7 @@
       <p>Scuttle can more accurately identify joins in your SQL statements if it knows about the associations between your application's models.</p>
       <hr style="margin: 0" />
       <h5><strong>Import Models From Github (read-only, don't worry)</strong></h5>
-      <p>Exports an archive from Github and automatically extracts associations from <code>app/models</code>. <br/>Depending on the size of the project, this process could take quite a while.</p>
+      <p>Exports an archive from Github and automatically extracts and imports associations from <code>app/models</code>. <br/>Depending on the size of the repo, this process could take a while.</p>
       <% if authenticated? %>
         <form class="form-github form-inline cushion-large" role="form">
           <input type="text" class="github-repo form-control" placeholder="username/project" />
