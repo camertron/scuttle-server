@@ -23,7 +23,7 @@ $(document).ready(function() {
 
     hideErrorMessage('.conversion-error-message');
 
-    $.get("convert.json", params).done(function(data) {
+    $.post("convert.json", params).done(function(data) {
       if (data.result == 'succeeded') {
         if (data.arel) {
           $(".arel").html(data.arel.replace("\n", "<br/>").replace(" ", "&nbsp;"));
@@ -70,12 +70,22 @@ $(document).ready(function() {
     fillAssociation(newForm, first, second, type, foreign_key, assoc_name);
     hookUpAssociation(newForm);
     $(".form-associations").append(newForm);
+    updateAssociationCount();
+    expandAssociations();
   }
 
   function hookUpAssociation(element) {
     $(".btn-remove", element).click(function() {
       $(this).parent().parent().remove();
+      updateWithDelay();
+      updateAssociationCount();
     });
+
+    $(".association-first", element).change(function() { updateWithDelay(); })
+    $(".association-second", element).change(function() { updateWithDelay(); })
+    $(".association-type", element).change(function() { updateWithDelay(); })
+    $(".association-foreign-key", element).change(function() { updateWithDelay(); })
+    $(".association-name", element).change(function() { updateWithDelay(); })
   }
 
   function fillAssociation(element, first, second, type, foreign_key, assoc_name) {
@@ -88,6 +98,7 @@ $(document).ready(function() {
 
   // hook up events for the initial association form
   hookUpAssociation($($(".association-element").get(0)));
+  updateAssociationCount();
 
   function clearAll() {
     $(".association-element").remove();
@@ -140,6 +151,14 @@ $(document).ready(function() {
           }
 
           $(".form-github .github-repo").val("");
+          updateWithDelay();
+          updateAssociationCount();
+          collapseAssociations();
+
+          var successMsg = $(".import-success-message");
+          $("span", successMsg).text("Successfully imported " + getAssociationCount() + " associations.");
+          successMsg.show();
+          window.setTimeout(function() { successMsg.hide(); }, 5000);
         } else {
           showErrorMessage('.import-error-message', data.message);
         }
@@ -156,6 +175,60 @@ $(document).ready(function() {
   $(".btn-clear-all").click(function() {
     if (confirm("Are you sure you want to remove all associations?")) {
       clearAll();
+      updateWithDelay();
+      updateAssociationCount();
+      expandAssociations();
     }
+  });
+
+  function getAssociationCount() {
+    return $(".association-element").length;
+  }
+
+  function updateAssociationCount() {
+    if (isExpanded()) {
+      $(".btn-expand-collapse span").text("Collapse (" + getAssociationCount() + " associations)");
+    } else {
+      $(".btn-expand-collapse span").text("Expand (" + getAssociationCount() + " associations)");
+    }
+  }
+
+  function collapseAssociations() {
+    var btn = $(".btn-expand-collapse");
+    var icon = $("i", btn);
+
+    icon.removeClass("glyphicon-chevron-down");
+    icon.addClass("glyphicon-chevron-right");
+    updateAssociationCount();
+
+    $(".form-associations").hide();
+  }
+
+  function expandAssociations() {
+    var btn = $(".btn-expand-collapse");
+    var icon = $("i", btn);
+    var text = $("span", btn);
+
+    icon.removeClass("glyphicon-chevron-right");
+    icon.addClass("glyphicon-chevron-down");
+    updateAssociationCount();
+
+    $(".form-associations").show();
+  }
+
+  function toggleAssociations() {
+    if (isExpanded()) {
+      collapseAssociations();
+    } else {
+      expandAssociations();
+    }
+  }
+
+  function isExpanded() {
+    return $(".btn-expand-collapse i").hasClass("glyphicon-chevron-down");
+  }
+
+  $(".btn-expand-collapse").click(function() {
+    toggleAssociations();
   });
 });

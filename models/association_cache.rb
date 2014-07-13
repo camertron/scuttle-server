@@ -9,7 +9,8 @@ class AssociationCache < ActiveRecord::Base
 
       manager.addAssociation(
         assoc['first'], assoc['second'], type_const,
-        assoc['association_name'], assoc['foreign_key']
+        non_empty_string_or_nil(assoc['association_name']),
+        non_empty_string_or_nil(assoc['foreign_key'])
       )
     end
 
@@ -19,6 +20,10 @@ class AssociationCache < ActiveRecord::Base
   private
 
   def self.const_for_assoc_type(type)
-    AssociationType.const_get(type.upcase)
+    AssociationType.const_get(type.upcase.to_sym)
+  end
+
+  def self.non_empty_string_or_nil(str)
+    str if str && !str.strip.empty?
   end
 end

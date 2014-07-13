@@ -47,7 +47,7 @@ module ScuttleServer
         content_type :json
 
         repo_name = RepoName.parse(params[:repo])
-        commit = github_user.api.commit(repo_name.to_s, 'master') # rescue nil
+        commit = github_user.api.commit(repo_name.to_s, 'master') rescue nil
 
         if commit
           record = AssociationCache.where(
@@ -76,7 +76,7 @@ module ScuttleServer
       end
     end
 
-    get '/convert.json' do
+    post '/convert.json' do
       begin
         content_type :json
 

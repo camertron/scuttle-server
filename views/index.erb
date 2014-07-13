@@ -34,7 +34,7 @@
       <p>Scuttle can more accurately identify joins in your SQL statements if it knows about the associations between your application's models.</p>
       <hr style="margin: 0" />
       <h5><strong>Import Models From Github (read-only, don't worry)</strong></h5>
-      <p>Exports an archive from Github and automatically extracts associations from <code>app/models</code>.</p>
+      <p>Exports an archive from Github and automatically extracts associations from <code>app/models</code>. <br/>Depending on the size of the project, this process could take quite a while.</p>
       <% if authenticated? %>
         <form class="form-github form-inline cushion-large" role="form">
           <input type="text" class="github-repo form-control" placeholder="username/project" />
@@ -44,12 +44,19 @@
             <i class="glyphicon glyphicon-warning-sign"></i>
             <span>An error occurred.</span>
           </span>
+          <span class="import-success-message success-message">
+            <i class="glyphicon glyphicon-ok"></i>
+            <span>Import succeeded!</span>
+          </span>
         </form>
       <% else %>
         <p>Please <a href="/login">login</a> in with your github account.</p>
       <% end %>
       <hr style="margin: 0" />
-      <h5>Configure Associations Manually (<a class="btn-clear-all">Clear All</a>)</h5>
+      <h5>Configure Associations (<a class="btn-clear-all">Clear All</a>)</h5>
+      <div class="btn-expand-collapse">
+        <i class="glyphicon glyphicon-chevron-down elbow-room"></i><span>Collapse</span>
+      </div>
       <div class="top-hat">
         <form class="form-associations" role="form">
           <%= erb :'shared/association_form' %>

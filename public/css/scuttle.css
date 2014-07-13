@@ -159,7 +159,7 @@ body {
   display: none;
 }
 
-.error-message {
+.error-message, .success-message {
   display: none;
 }
 
@@ -167,6 +167,19 @@ body {
   color: #DEC109;
 }
 
+.success-message i {
+  color: #36AB30;
+}
+
 .error-message span {
   color: #666;
+}
+
+.success-message span {
+  color: #666;
+}
+
+.btn-expand-collapse {
+  cursor: pointer;
+  display: inline-block;
 }
