@@ -43,8 +43,8 @@ namespace :bower do
         public_file = public_path.join(dest_dir).join(lib_name).join(File.basename(lib_file))
         FileUtils.mkdir_p(public_file.dirname.to_s)
 
-        puts "Symlinking #{lib_file} -> #{public_file}"
-        FileUtils.ln_s(lib_file.expand_path.to_s, public_file.expand_path.to_s, force: true)
+        puts "Copying #{lib_file} -> #{public_file}"
+        FileUtils.cp(lib_file.expand_path.to_s, public_file.expand_path.to_s, force: true)
       end
     end
   end
@@ -67,12 +67,16 @@ namespace :deploy do
 
   task :after_deploy, :env, :branch do |t, args|
     puts "Bundling assets..."
-    system("heroku run 'bundle exec rake bower:install' --app #{args[:env]}")
+
+    Bundler.with_clean_env do
+      system("heroku run 'bundle exec rake bower:install' --app #{ENVIRONMENTS[args[:env] || :staging]}")
+    end
+
     puts "Deployment Complete"
   end
 
   task :update_code, :env, :branch do |t, args|
     puts "Updating #{ENVIRONMENTS[args[:env]]} with branch #{args[:branch]}"
-    system('git push #{ENVIRONMENTS[args[:env]]} +#{args[:branch]}:master')
+    system("git push #{args[:env]} #{args[:branch]}:master")
   end
 end
