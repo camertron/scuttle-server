@@ -7,6 +7,12 @@ require 'pathname'
 require 'sinatra/activerecord'
 require 'sinatra/activerecord/rake'
 
+# List of environments and their heroku git remotes
+ENVIRONMENTS = {
+  :staging => 'scuttle-server-staging',
+  :production => 'scuttle-server'
+}
+
 namespace :bower do
   task :install do
     system('bower install')
@@ -41,5 +47,32 @@ namespace :bower do
         FileUtils.ln_s(lib_file.expand_path.to_s, public_file.expand_path.to_s, force: true)
       end
     end
+  end
+end
+
+namespace :deploy do
+  ENVIRONMENTS.keys.each do |env|
+    desc "Deploy to #{env}"
+    task env do
+      current_branch = `git branch | grep ^* | awk '{ print $2 }'`.strip
+      Rake::Task['deploy:before_deploy'].invoke(env, current_branch)
+      Rake::Task['deploy:update_code'].invoke(env, current_branch)
+      Rake::Task['deploy:after_deploy'].invoke(env, current_branch)
+    end
+  end
+
+  task :before_deploy, :env, :branch do |t, args|
+    puts "Deploying #{args[:branch]} to #{args[:env]}"
+  end
+
+  task :after_deploy, :env, :branch do |t, args|
+    puts "Bundling assets..."
+    system("heroku run 'bundle exec rake bower:install' --app #{args[:env]}")
+    puts "Deployment Complete"
+  end
+
+  task :update_code, :env, :branch do |t, args|
+    puts "Updating #{ENVIRONMENTS[args[:env]]} with branch #{args[:branch]}"
+    system('git push #{ENVIRONMENTS[args[:env]]} +#{args[:branch]}:master')
   end
 end
