@@ -26,6 +26,7 @@ class AssociationExtractor
       if node.args_node.size > 1 && (hash_arg = node.args_node[1]).is_a?(Java::OrgJrubyparserAst::HashNode)
         class_name = read_from_hash(hash_arg, 'class_name')
         foreign_key = read_from_hash(hash_arg, 'association_foreign_key')
+        foreign_key ||= read_from_hash(hash_arg, 'foreign_key')
       end
 
       association_name = node.args_node[0].name
@@ -85,7 +86,7 @@ class AssociationExtractor
         when Java::OrgJrubyparserAst::StrNode
           textual_node.value
         else
-          ""
+          textual_node.to_source
       end
     end
 
