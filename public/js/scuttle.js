@@ -51,7 +51,7 @@ $(document).ready(function() {
   update();
 
   var beautifySql = function(text) {
-    var regex = /(SELECT|FROM|WHERE|GROUP BY|ORDER BY|RIGHT JOIN|LEFT JOIN|INNER JOIN|OUTER JOIN|JOIN)/g
+    var regex = /(SELECT|FROM|WHERE|GROUP BY|ORDER BY|RIGHT JOIN|LEFT JOIN|INNER JOIN|OUTER JOIN|JOIN|UNION)/g
     return text.replace(/\n/g, "").replace(regex, function(match) {
       return "\n" + match;
     }).substring(1);
