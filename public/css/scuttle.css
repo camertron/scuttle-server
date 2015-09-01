@@ -183,3 +183,7 @@ body {
   cursor: pointer;
   display: inline-block;
 }
+
+.checkbox label {
+  color: #777;
+}

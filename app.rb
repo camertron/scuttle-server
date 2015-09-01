@@ -80,10 +80,17 @@ module ScuttleServer
       begin
         content_type :json
 
+        options = {
+          use_arel_helpers: params.fetch('use_arel_helpers', 'false') == 'true',
+          use_arel_nodes_prefix: params.fetch('use_arel_nodes_prefix', 'true') == 'true'
+        }
+
+        puts options.inspect
+
         arel = Scuttle.colorize(
           Scuttle.beautify(
             Scuttle.convert(
-              params.fetch('sql', ""),
+              params.fetch('sql', ""), options,
               AssociationCache.create_manager(JSON.parse(params.fetch('associations', '[]')))
             )
           ), :div
