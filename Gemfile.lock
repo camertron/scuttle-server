@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/camertron/scuttle-rb.git
-  revision: 3517dc7dcc070ac1231b8daec6371ede5fd25878
+  revision: d46e06d8c5424772d2076164bb9fd1d6beaacd11
   specs:
     scuttle (1.0.0)
       coderay (~> 1.1.0)
