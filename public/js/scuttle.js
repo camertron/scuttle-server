@@ -3,6 +3,8 @@ $(document).ready(function() {
 
   var timeoutHandle = null;
   var editor = ace.edit($(".editor").get(0));
+  var chkUseArelHelpers = $("#chk-use-arel-helpers");
+  var chkSimplifyArelNodes = $("#chk-simplify-arel-nodes");
   editor.getSession().setMode("ace/mode/sql");
   editor.setTheme("ace/theme/ambiance");
   editor.setShowPrintMargin(false);
@@ -18,7 +20,9 @@ $(document).ready(function() {
   var update = function() {
     var params = {
       sql: editor.getValue(),
-      associations: JSON.stringify(getAssociations())
+      associations: JSON.stringify(getAssociations()),
+      use_arel_helpers: chkUseArelHelpers.is(':checked'),
+      use_arel_nodes_prefix: !chkSimplifyArelNodes.is(':checked')
     };
 
     hideErrorMessage('.conversion-error-message');
@@ -46,6 +50,14 @@ $(document).ready(function() {
 
   editor.addEventListener("change", function() {
     updateWithDelay();
+  });
+
+  chkUseArelHelpers.click(function() {
+    update();
+  });
+
+  chkSimplifyArelNodes.click(function() {
+    update();
   });
 
   update();
