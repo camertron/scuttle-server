@@ -1,3 +1,5 @@
+$:.push('.')
+
 require 'rubygems'
 require 'app'
 

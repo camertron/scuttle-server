@@ -1,6 +1,6 @@
 source "http://rubygems.org"
 
-ruby '2.0.0', engine: 'jruby', engine_version: '1.7.15'
+ruby '2.3.3', engine: 'jruby', engine_version: '9.1.17.0'
 
 gem 'activerecord-jdbcpostgresql-adapter', '~> 1.3.0'
 gem 'activesupport', '~> 4.0.0'
