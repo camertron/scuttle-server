@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/camertron/scuttle-rb.git
-  revision: d46e06d8c5424772d2076164bb9fd1d6beaacd11
+  revision: e45d6efb7b757c8119228e3e8867e294c313de3c
   specs:
     scuttle (1.0.0)
       coderay (~> 1.1.0)
@@ -98,6 +98,7 @@ GEM
 
 PLATFORMS
   java
+  universal-java-1.8
 
 DEPENDENCIES
   activerecord-jdbcpostgresql-adapter (~> 1.3.0)
