@@ -44,8 +44,14 @@ GEM
     minitest (4.7.5)
     multi_json (1.8.2)
     multipart-post (2.0.0)
+    nio4r (2.5.2)
+    nio4r (2.5.2-java)
     octokit (3.2.0)
       sawyer (~> 0.5.3)
+    pry (0.9.12.6)
+      coderay (~> 1.0)
+      method_source (~> 0.8)
+      slop (~> 3.4)
     pry (0.9.12.6-java)
       coderay (~> 1.0)
       method_source (~> 0.8)
@@ -53,9 +59,11 @@ GEM
       spoon (~> 0.0)
     pry-nav (0.2.3)
       pry (~> 0.9.10)
-    puma (2.8.2-java)
-      rack (>= 1.1, < 2.0)
-    rack (1.5.2)
+    puma (4.3.1)
+      nio4r (~> 2.0)
+    puma (4.3.1-java)
+      nio4r (~> 2.0)
+    rack (1.6.11)
     rack-protection (1.5.3)
       rack
     rack-test (0.6.2)
@@ -87,6 +95,7 @@ GEM
     slop (3.5.0)
     spoon (0.0.4)
       ffi
+    thread_safe (0.3.2)
     thread_safe (0.3.2-java)
     tilt (1.4.1)
     tzinfo (0.3.38)
@@ -98,6 +107,7 @@ GEM
 
 PLATFORMS
   java
+  ruby
   universal-java-1.8
 
 DEPENDENCIES
@@ -106,7 +116,7 @@ DEPENDENCIES
   jruby-parser (~> 0.5.0)
   json_pure (~> 1.8.0)
   pry-nav (~> 0.2.0)
-  puma (~> 2.8.0)
+  puma (~> 4.3.1)
   rack-test (~> 0.6.0)
   rake (~> 10.1.0)
   rr (~> 1.1.0)

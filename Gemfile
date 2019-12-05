@@ -6,7 +6,7 @@ gem 'activerecord-jdbcpostgresql-adapter', '~> 1.3.0'
 gem 'activesupport', '~> 4.0.0'
 gem 'jruby-parser', '~> 0.5.0'
 gem 'json_pure', '~> 1.8.0'
-gem 'puma', '~> 2.8.0'
+gem 'puma', '~> 4.3.1'
 gem 'scuttle', github: "camertron/scuttle-rb"
 gem 'sinatra', '~> 1.4.0'
 gem 'sinatra-activerecord', '~> 2.0.0'
