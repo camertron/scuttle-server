@@ -78,7 +78,7 @@ GEM
     rspec-expectations (2.14.5)
       diff-lcs (>= 1.1.3, < 2.0)
     rspec-mocks (2.14.6)
-    rubyzip (1.1.0)
+    rubyzip (1.3.0)
     sawyer (0.5.4)
       addressable (~> 2.3.5)
       faraday (~> 0.8, < 0.10)
@@ -121,7 +121,7 @@ DEPENDENCIES
   rake (~> 10.1.0)
   rr (~> 1.1.0)
   rspec (~> 2.14.0)
-  rubyzip (= 1.1.0)
+  rubyzip (= 1.3.0)
   scuttle!
   sinatra (~> 1.4.0)
   sinatra-activerecord (~> 2.0.0)
