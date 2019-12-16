@@ -21,9 +21,9 @@ module ScuttleServer
     enable :sessions
 
     set :github_options, {
-      :scopes    => "user",
-      :secret    => ENV['GITHUB_CLIENT_SECRET'],
-      :client_id => ENV['GITHUB_CLIENT_ID'],
+      scopes:    'repo',
+      secret:    ENV['GITHUB_CLIENT_SECRET'],
+      client_id: ENV['GITHUB_CLIENT_ID'],
     }
 
     register Sinatra::Auth::Github
