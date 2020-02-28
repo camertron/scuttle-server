@@ -11,7 +11,7 @@ gem 'scuttle', github: "camertron/scuttle-rb"
 gem 'sinatra', '~> 1.4.0'
 gem 'sinatra-activerecord', '~> 2.0.0'
 gem 'sinatra_auth_github', '~> 1.0.0'
-gem 'rake', '~> 10.1.0'
+gem 'rake', '~> 13.0.1'
 gem 'rubyzip', '1.3.0'
 
 group :development do
