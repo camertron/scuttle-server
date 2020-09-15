@@ -187,3 +187,8 @@ body {
 .checkbox label {
   color: #777;
 }
+
+.form-group label {
+  color: #777 !important;
+  font-weight: normal !important;
+}

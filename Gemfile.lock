@@ -1,6 +1,6 @@
 GIT
-  remote: git://github.com/camertron/scuttle-rb.git
-  revision: e45d6efb7b757c8119228e3e8867e294c313de3c
+  remote: https://github.com/camertron/scuttle-rb.git
+  revision: 0ffa874c3d252206c89ad532f8cf92920337721b
   specs:
     scuttle (1.0.0)
       coderay (~> 1.1.0)
@@ -128,7 +128,7 @@ DEPENDENCIES
   sinatra_auth_github (~> 1.0.0)
 
 RUBY VERSION
-   ruby 2.3.3p0 (jruby 9.1.17.0)
+   ruby 2.5.7p0 (jruby 9.2.11.1)
 
 BUNDLED WITH
-   1.16.1
+   2.1.4

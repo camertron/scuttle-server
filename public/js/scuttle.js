@@ -5,6 +5,7 @@ $(document).ready(function() {
   var editor = ace.edit($(".editor").get(0));
   var chkUseArelHelpers = $("#chk-use-arel-helpers");
   var chkSimplifyArelNodes = $("#chk-simplify-arel-nodes");
+  var selRailsVersion = $("#sel-rails-version");
   editor.getSession().setMode("ace/mode/sql");
   editor.setTheme("ace/theme/ambiance");
   editor.setShowPrintMargin(false);
@@ -22,7 +23,8 @@ $(document).ready(function() {
       sql: editor.getValue(),
       associations: JSON.stringify(getAssociations()),
       use_arel_helpers: chkUseArelHelpers.is(':checked'),
-      use_arel_nodes_prefix: !chkSimplifyArelNodes.is(':checked')
+      use_arel_nodes_prefix: !chkSimplifyArelNodes.is(':checked'),
+      use_rails_version: selRailsVersion.val()
     };
 
     hideErrorMessage('.conversion-error-message');
@@ -48,17 +50,10 @@ $(document).ready(function() {
     timeoutHandle = window.setTimeout(update, 2000);
   };
 
-  editor.addEventListener("change", function() {
-    updateWithDelay();
-  });
-
-  chkUseArelHelpers.click(function() {
-    update();
-  });
-
-  chkSimplifyArelNodes.click(function() {
-    update();
-  });
+  editor.addEventListener("change", updateWithDelay)
+  chkUseArelHelpers.click(update);
+  chkSimplifyArelNodes.click(update);
+  selRailsVersion.change(update);
 
   update();
 

@@ -1,13 +1,13 @@
 source "http://rubygems.org"
 
-ruby '2.3.3', engine: 'jruby', engine_version: '9.1.17.0'
+ruby '2.5.7', engine: 'jruby', engine_version: '9.2.11.1'
 
 gem 'activerecord-jdbcpostgresql-adapter', '~> 1.3.0'
 gem 'activesupport', '~> 4.0.0'
 gem 'jruby-parser', '~> 0.5.0'
 gem 'json_pure', '~> 1.8.0'
 gem 'puma', '~> 4.3.5'
-gem 'scuttle', github: "camertron/scuttle-rb"
+gem 'scuttle', github: 'camertron/scuttle-rb'
 gem 'sinatra', '~> 1.4.0'
 gem 'sinatra-activerecord', '~> 2.0.0'
 gem 'sinatra_auth_github', '~> 1.0.0'

@@ -25,7 +25,15 @@
           <span>An error occurred.</span>
         </span>
         <div class="pull-right">
-          <form class="form-inline">
+          <form class="form-inline" role="form">
+            <div class="form-group elbow-room">
+              <label for="sel-rails-version">Rails Version</label>
+              &nbsp;
+              <select class="form-control" id="sel-rails-version">
+                <option value="5.2.1">&lt; 6.0.0</option>
+                <option value="6.0.0" selected>&gt;= 6.0.0</option>
+              </select>
+            </div>
             <div class="checkbox elbow-room">
               <label>
                 <input type="checkbox" id="chk-use-arel-helpers"> Use ArelHelpers
@@ -93,7 +101,7 @@
     <p>Scuttle doesn't always know which table a referenced column belongs to. This isn't usually a problem, except when that column is the left-hand side of an expression. If you see something like <code>where(:id.eq(1))</code> in the conversion result, chances are you didn't fully qualify the column with a table. Try <code>WHERE post.id = 1</code> instead of <code>WHERE id = 1</code>.</p>
 
     <h4>Why Does Scuttle Exist?</h4>
-    <p>I'll be giving a talk at <a href="http://railsconf.com/program#sessions">RailsConf</a> this year about constructing advanced queries with Arel. This project is a direct result of working on the talk. Plus it's fun :)</p>
+    <p>I gave a <a href="https://www.youtube.com/watch?v=ShPAxNcLm3o">talk</a> at RailsConf in 2014 about constructing advanced queries with Arel. This project is a direct result of working on the talk. Plus it was fun :)</p>
   </div>
 
   <div class="col-lg-6">

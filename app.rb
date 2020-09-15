@@ -85,6 +85,10 @@ module ScuttleServer
           use_arel_nodes_prefix: params.fetch('use_arel_nodes_prefix', 'true') == 'true'
         }
 
+        if rails_version = params['use_rails_version']
+          options[:use_rails_version] = rails_version
+        end
+
         puts options.inspect
 
         arel = Scuttle.colorize(
