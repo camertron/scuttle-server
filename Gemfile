@@ -3,7 +3,7 @@ source "http://rubygems.org"
 ruby '2.5.7', engine: 'jruby', engine_version: '9.2.11.1'
 
 gem 'activerecord-jdbcpostgresql-adapter', '~> 1.3.0'
-gem 'activesupport', '~> 4.0.0'
+gem 'activesupport', '~> 6.1.7'
 gem 'jruby-parser', '~> 0.5.0'
 gem 'json_pure', '~> 1.8.0'
 gem 'puma', '~> 4.3.12'
