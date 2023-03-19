@@ -1,12 +1,6 @@
-$:.push('.')
+# This file is used by Rack-based servers to start the application.
 
-require 'rubygems'
-require 'app'
+require_relative "config/environment"
 
-# if Sinatra::Base.production?
-#   require 'rake'
-#   Rake.load_rakefile("./Rakefile")
-#   Rake::Task['bower:install'].invoke
-# end
-
-run ScuttleServer::App
+run Rails.application
+Rails.application.load_server

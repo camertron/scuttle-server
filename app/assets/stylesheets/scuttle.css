@@ -1,0 +1,201 @@
+/* override to make the font work with our folder structure */
+@font-face {
+  font-family: 'Glyphicons Halflings';
+
+  src: url('../fonts/bootstrap/glyphicons-halflings-regular.eot');
+  src: url('../fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/bootstrap/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/bootstrap/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+/* Space out content a bit */
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.footer {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  padding-bottom: 19px;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+}
+
+.tagline {
+  margin-top: 32px;
+  margin-left: 20px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+.container .jumbotron {
+  border-bottom: 1px solid #e5e5e5;
+  padding: 20px;
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .container .jumbotron {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+
+.container .jumbotron p {
+  font-weight: normal;
+  font-size: 14px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+.editor {
+  width: 100%;
+  height: 300px;
+  border-radius: 5px;
+  text-align: left;
+  font-size: 15px;
+}
+
+.arel {
+  margin-bottom: 30px;
+}
+
+.arel pre {
+  padding: 20px;
+  font-size: 14px;
+}
+
+.button-bar {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.info {
+  margin-bottom: 15px;
+}
+
+.elbow-room {
+  margin-right: 10px;
+}
+
+.hat {
+  margin-top: 10px;
+}
+
+.top-hat {
+  margin-top: 20px;
+}
+
+.cushion {
+  margin-bottom: 10px;
+}
+
+.cushion-large {
+  margin-bottom: 20px;
+}
+
+.login-widget {
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #666;
+}
+
+.login-widget:hover {
+  background: #EEE;
+}
+
+.login-widget .glyphicon-chevron-down {
+  margin-top: 15px;
+}
+
+.association-element {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.association-element hr {
+  border-top-color: #d5d5d5;
+}
+
+.btn-clear-all {
+  cursor: pointer;
+}
+
+.btn-remove {
+  cursor: pointer;
+}
+
+.import-spinner {
+  display: none;
+}
+
+.error-message, .success-message {
+  display: none;
+}
+
+.error-message i {
+  color: #DEC109;
+}
+
+.success-message i {
+  color: #36AB30;
+}
+
+.error-message span {
+  color: #666;
+}
+
+.success-message span {
+  color: #666;
+}
+
+.btn-expand-collapse {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.checkbox label {
+  color: #777;
+}
+
+.form-group label {
+  color: #777 !important;
+  font-weight: normal !important;
+}

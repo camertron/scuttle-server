@@ -1,0 +1,1 @@
+db: trap 'docker stop scuttle-server-db' EXIT > /dev/null; docker run --rm -it --name scuttle-server-db -p 5432:5432 -e POSTGRES_PASSWORD=password -e PGDATA=/var/lib/postgresql/data/pgdata -v `$pwd`/tmp/data:/var/lib/postgresql/data postgres:15

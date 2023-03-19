@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Scuttle - SQL to AREL</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header clearfix">
+        <h1 class="pull-left">Scuttle</h1>
+        <h4 class="pull-left text-muted tagline">A SQL and Arel Editor</h4>
+      </div>
+
+      <%= yield %>
+
+      <div class="footer">
+        <p>Written by <a href="https://github.com/camertron">Cameron Dutro</a>. Source on <a href="https://github.com/camertron/scuttle-server">Github</a></p>
+      </div>
+
+    </div> <!-- /container -->
+  </body>
+</html>
