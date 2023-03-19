@@ -11,7 +11,7 @@
     "webpack-cli": "^3.3.12",
 
     "lz-string": "~1.5.0",
-    "jquery": "~2.1.1",
+    "jquery": "~3.5.0",
     "bootstrap": "~3.2.0",
     "ace-builds": "~1.2.9"
   },
